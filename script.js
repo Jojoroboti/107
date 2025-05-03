@@ -4,9 +4,11 @@
   if (!key) return;
 
   try {
-    const resp    = await fetch('/mapping.json');
-    if (!resp.ok) throw new Error('Mapping nicht gefunden');
+    const url = `https://raw.githubusercontent.com/Jojoroboti/107/main/mapping.json?t=${Date.now()}`;
+    const resp = await fetch(url, { cache: 'no-store' });
+    if (!resp.ok) throw new Error(`Fehler: ${resp.status}`);
     const mapping = await resp.json();
+
 
     const dest = mapping[key];
     if (dest) {
