@@ -1,6 +1,6 @@
 (async function(){
   const params = new URLSearchParams(window.location.search);
-  const key    = params.get('target');
+  const key    = params.get('t');
   if (!key) {
     document.body.textContent = 'Kein Zielparameter angegeben.';
     return;
