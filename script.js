@@ -14,7 +14,7 @@
 
     const dest = mapping[key];
     if (dest) {
-      document.body.textContent = 'Weiterleitung …';
+    //   document.body.textContent = 'Weiterleitung …';
       window.location.replace(dest);
     } else {
       document.body.textContent = `Ziel „${key}“ nicht gefunden.`;
