@@ -1,8 +1,9 @@
 (async function(){
+    const infotext = document.getElementById("infotext");
     const params = new URLSearchParams(window.location.search);
     const key    = params.get('t');
     if (!key) {
-            document.getElementById("infotext").textContent = 'There was no target provided.';
+        infotext.textContent = 'There was no target provided.';
             return;
     }
 
@@ -14,13 +15,13 @@
 
         const dest = mapping[key];
         if (dest) {
-            document.body.textContent = 'Joining...';
+            infotext.textContent = 'Joining...';
             window.location.replace(dest);
         } else {
-            document.getElementById("infotext").textContent = `Target „${key}“ not found.`;
+            infotext.textContent = `Target „${key}“ not found.`;
         }
     } catch (e) {
         console.error('Redirect-Fehler:', e);
-        document.getElementById("infotext").textContent = 'An unknown error occured. Please try again later.';
+        infotext.textContent = 'An unknown error occured. Please try again later.';
     }
 })();
