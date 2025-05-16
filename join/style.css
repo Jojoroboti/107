@@ -33,7 +33,7 @@ html, body {
     100% { transform: rotate(360deg); }
 }
 
-button {
+.linkbutton {
     margin-bottom: 10px;
     height: 40px;
     transition-duration: 0.4s;
@@ -47,7 +47,7 @@ button {
     text-align: center;
 }
 
-button:hover {
+.linkbutton:hover {
     background-color: #3498db;
     color: white;
 }
